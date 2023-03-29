@@ -18,7 +18,6 @@ public class ChucVuServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String uri = request.getRequestURI();
-        ChucVu chucVua = null;
         if (uri.contains("hien-thi")) {
             List<ChucVu> list = chucVuRepository.getAll();
             request.setAttribute("list", list);

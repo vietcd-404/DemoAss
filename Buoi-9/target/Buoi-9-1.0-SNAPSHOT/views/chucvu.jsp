@@ -54,12 +54,10 @@
 			<th scope="row">${u.id}</th>
 			<td>${u.ma}</td>
 			<td>${u.ten}</td>
-			<td><a href="/chuc-vu/detail?id=${u.id}">
-				Sửa
-			</a>
-				<a href="/chuc-vu/delete?id=${u.id}">
-					Xóa
-				</a></td>
+			<td>
+				<a href="/chuc-vu/detail?id=${u.id}">Sửa</a>
+				<a href="/chuc-vu/delete?id=${u.id}">Xóa</a>
+			</td>
 		</tr>
 	</c:forEach>
 
