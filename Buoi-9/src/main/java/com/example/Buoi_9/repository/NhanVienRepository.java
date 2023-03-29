@@ -12,7 +12,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.util.ArrayList;
-
 public class NhanVienRepository {
     public ArrayList<NhanVien> getAll() {
         ArrayList<NhanVien> listKhachHang = new ArrayList<>();
