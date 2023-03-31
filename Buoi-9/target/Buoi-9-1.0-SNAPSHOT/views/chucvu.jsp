@@ -14,6 +14,9 @@
 		  integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 </head>
 <body class="container">
+<center>
+	<h1>Quản lý chức vụ</h1>
+</center>
 <form action="ChucVuServlet" method="post">
 
 	<div class="mb-3">
@@ -39,7 +42,7 @@
 	</button>
 	<button formaction="/chuc-vu/reset" type="submit" class="btn btn-outline-secondary">Clear</button>
 
-<table class="table">
+<table class="table table-bordered table-hover">
 	<thead>
 	<tr>
 		<th scope="col">Id</th>

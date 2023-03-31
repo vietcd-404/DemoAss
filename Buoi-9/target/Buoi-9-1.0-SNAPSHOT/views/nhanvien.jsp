@@ -107,6 +107,8 @@
 			<th scope="row">${u.id}</th>
 			<td>${u.chucVu.ten}</td>
 			<td>${u.cuaHang.ten}</td>
+<%--			<td>${u.cuaHang.diaChi}</td>--%>
+<%--			<td>${u.cuaHang.thanhPho}</td>--%>
 			<td>${u.ma}</td>
 			<td>${u.ten}</td>
 			<td>${u.tenDem}</td>

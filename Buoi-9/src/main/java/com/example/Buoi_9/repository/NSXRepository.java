@@ -1,7 +1,6 @@
 package com.example.Buoi_9.repository;
 
 import com.example.Buoi_9.entity.NSX;
-import com.example.Buoi_9.entity.NSX;
 
 import com.example.Buoi_9.util.HibernateUtil;
 import org.hibernate.Session;

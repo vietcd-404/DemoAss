@@ -14,6 +14,9 @@
 		  integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 </head>
 <body class="container">
+<center>
+	<h1>Quản lý chức vụ</h1>
+</center>
 <form action="ChucVuServlet" method="post">
 
 	<div class="mb-3">
@@ -30,7 +33,7 @@
 	</div>
 <%--	<button type="submit" class="btn btn-outline-secondary">Thêm</button>--%>
 
->
+
 
 
 	<button formaction="/chuc-vu/add" type="submit" class="btn btn-outline-secondary">Thêm</button>
@@ -38,8 +41,8 @@
 		Sửa
 	</button>
 	<button formaction="/chuc-vu/reset" type="submit" class="btn btn-outline-secondary">Clear</button>
-
-<table class="table">
+<br>
+<table class="table table-bordered table-hover">
 	<thead>
 	<tr>
 		<th scope="col">Id</th>

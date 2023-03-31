@@ -31,6 +31,5 @@ public class DongSP implements Serializable {
     private List<ChiTietSanPham> chiTietSanPhamList;
 
     public DongSP() {
-
     }
 }

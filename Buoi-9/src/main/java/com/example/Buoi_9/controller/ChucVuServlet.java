@@ -11,7 +11,7 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "ChucVuServlet", value = {"/chuc-vu/hien-thi", "/chuc-vu/add", "/chuc-vu/detail", "/chuc-vu/update", "/chuc-vu/delete","/chuc-vu/reset"})
+@WebServlet(name = "ChucVuServlet", value = {"/chuc-vu/hien-thi", "/chuc-vu/add", "/chuc-vu/detail", "/chuc-vu/update", "/chuc-vu/delete", "/chuc-vu/reset"})
 public class ChucVuServlet extends HttpServlet {
     private ChucVuRepository chucVuRepository = new ChucVuRepository();
 
@@ -63,7 +63,7 @@ public class ChucVuServlet extends HttpServlet {
             chucVu.setTen(ten);
             this.chucVuRepository.update(chucVu);
             response.sendRedirect("/chuc-vu/hien-thi");
-        }else if(uri.contains("reset")){
+        } else if (uri.contains("reset")) {
             String id = "";
             String ma = "";
             String ten = "";

@@ -14,9 +14,12 @@
 		  integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 </head>
 <body class="container">
+<center>
+	<h1>Quản lý cửa hàng</h1>
+</center>
 <form action="CuaHangServlet" method="post">
 <div class="row mb-3">
-	<div class="col-3"><h5>Id:</h5></div>
+	<div class="col-3">Id:</div>
 	<div class="col-3">
 		<input
 				value="${ch.id}"
@@ -29,7 +32,7 @@
 	</div>
 </div>
 <div class="row mb-3">
-	<div class="col-3"><h5>Mã:</h5></div>
+	<div class="col-3">Mã:</div>
 	<div class="col-3">
 		<input
 				value="${ch.ma}"
@@ -41,7 +44,7 @@
 	</div>
 </div>
 <div class="row mb-3">
-	<div class="col-3"><h5>Tên:</h5></div>
+	<div class="col-3">Tên:</div>
 	<div class="col-3">
 		<input
 				value="${ch.ten}"
@@ -53,7 +56,7 @@
 	</div>
 </div>
 <div class="row mb-3">
-	<div class="col-3"><h5>Địa chỉ:</h5></div>
+	<div class="col-3">Địa chỉ:</div>
 	<div class="col-3">
 		<input
 				value="${ch.diaChi}"
@@ -65,7 +68,7 @@
 	</div>
 </div>
 <div class="row mb-3">
-	<div class="col-3"><h5>Thành phố:</h5></div>
+	<div class="col-3">Thành phố:</div>
 	<div class="col-3">
 		<input
 				value="${ch.thanhPho}"
@@ -77,7 +80,7 @@
 	</div>
 </div>
 <div class="row mb-3">
-	<div class="col-3"><h5>Quốc gia:</h5></div>
+	<div class="col-3">Quốc gia:</div>
 	<div class="col-3">
 		<input
 				value="${ch.quocGia}"
@@ -92,6 +95,7 @@
 <button formaction="/cua-hang/update?id=${ch.id}" class="btn btn-outline-secondary">
 	Sửa
 </button>
+	<hr>
 <table class="table">
 	<thead>
 	<tr>
