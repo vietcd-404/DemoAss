@@ -19,10 +19,10 @@
 </center>
 <form action="ChucVuServlet" method="post">
 
-	<div class="mb-3">
-		<label class="form-label ">Id</label>
-		<input name="id" value="${cv.id}" type="text" class="form-control " disabled>
-	</div>
+<%--	<div class="mb-3">--%>
+<%--		<label class="form-label ">Id</label>--%>
+<%--		<input name="id" value="${cv.id}" type="text" class="form-control " disabled>--%>
+<%--	</div>--%>
 	<div class="mb-3">
 		<label class="form-label">Mã</label>
 		<input name="ma" value="${cv.ma}" type="text" class="form-control">
@@ -42,6 +42,7 @@
 	</button>
 	<button formaction="/chuc-vu/reset" type="submit" class="btn btn-outline-secondary">Clear</button>
 <br>
+	<div class="mb-3"></div>
 <table class="table table-bordered table-hover">
 	<thead>
 	<tr>

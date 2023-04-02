@@ -53,7 +53,7 @@ public class ChucVuServlet extends HttpServlet {
             this.chucVuRepository.add(chucVu);
             response.sendRedirect("/chuc-vu/hien-thi");
         } else if (uri.contains("update")) {
-            String id = request.getParameter("id");
+                String id = request.getParameter("id");
 
             String ma = request.getParameter("ma");
             String ten = request.getParameter("ten");

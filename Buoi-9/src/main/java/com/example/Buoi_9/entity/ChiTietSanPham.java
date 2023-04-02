@@ -14,7 +14,7 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-@Table(name = "ChiTietSanPham")
+@Table(name = "ChiTietSP")
 public class ChiTietSanPham implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -44,7 +44,7 @@ public class ChiTietSanPham implements Serializable {
     private String moTa;
 
     @Column(name = "SoLuongTon")
-    private String soLuongTon;
+    private int soLuongTon;
 
     @Column(name = "GiaNhap")
     private double giaNhap;
