@@ -62,6 +62,12 @@ public class ChiTietSanPhamServlet extends HttpServlet {
             String dongSPId = request.getParameter("dongSPId");
             String mauSacId = request.getParameter("mauSacId");
             Integer namBH = Integer.parseInt(request.getParameter("namBH"));
+            try {
+                Integer.parseInt(request.getParameter("namBH"));
+            }catch (NumberFormatException e){
+                String mess = "Năm bảo hành phải là số vui lòng nhập lại";
+                request.setAttribute("mess",mess);
+            }
             Integer soLuongTon = Integer.parseInt(request.getParameter("soLuongTon"));
             Double giaNhap = Double.parseDouble(request.getParameter("giaNhap"));
             Double giaBan = Double.parseDouble(request.getParameter("giaBan"));

@@ -1,8 +1,10 @@
 package com.example.Buoi_9.repository;
 
 import com.example.Buoi_9.entity.KhachHang;
+import com.example.Buoi_9.entity.KhachHang;
 import com.example.Buoi_9.util.HibernateUtil;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.util.List;
@@ -13,6 +15,72 @@ public class KhachHangRepository {
         Query q = ses.createQuery("from KhachHang");
         List<KhachHang> list = q.getResultList();
         return list;
+    }
+    public KhachHang getById(String id) {
+        KhachHang khachHang = new KhachHang();
+        try (Session session = HibernateUtil.getFACTORY().openSession()) {
+//            Query query = session.createQuery("from KhachHang where id =: id");
+//            query.setParameter("id", id);
+//            khachHang= (KhachHang) query.getSingleResult();
+            khachHang = session.get(KhachHang.class, id);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return khachHang;
+    }
+    public Boolean add(KhachHang khachHang) {
+        Transaction transaction;
+        try (Session session = HibernateUtil.getFACTORY().openSession()) {
+            transaction = session.beginTransaction();
+            session.save(khachHang);
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    public Boolean update(KhachHang khachHang) {
+        Transaction transaction = null;
+        try (Session session = HibernateUtil.getFACTORY().openSession()) {
+            transaction = session.beginTransaction();
+            session.update(khachHang);
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+
+        }
+    }
+    //    public Boolean delete(ChucVu chucVu) {
+//        Transaction transaction = null;
+//        try (Session session = HibernateUtil.getFACTORY().openSession()) {
+//            transaction = session.beginTransaction();
+//            session.delete(chucVu);
+//            transaction.commit();
+//            return true;
+//        } catch (Exception e) {
+//            e.printStackTrace(System.out);
+//        }
+//        return false;
+//    }
+    public Boolean delete(String id) {
+        Transaction transaction = null;
+        try (Session session = HibernateUtil.getFACTORY().openSession()) {
+            KhachHang khachHang = session.get(KhachHang.class, id);
+            transaction = session.beginTransaction();
+            if (khachHang != null) {
+                session.delete(khachHang);
+
+            }
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+        }
+        return false;
     }
     public static void main(String[] args) {
         new KhachHangRepository().getAll().forEach(s -> System.out.println(s));

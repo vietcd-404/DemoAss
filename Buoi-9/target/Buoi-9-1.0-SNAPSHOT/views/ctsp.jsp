@@ -60,17 +60,18 @@
 		<input
 				value="${ctsp.namBH}"
 				name="namBH"
-				type="text"
+				type="number"
 				class="form-control"
 				required
 		/>
+
 	</div>
 	<div class="col-md-3">
 		<label class="form-label">Số lượng tồn</label>
 		<input
 				value="${ctsp.soLuongTon}"
 				name="soLuongTon"
-				type="text"
+				type="number"
 				class="form-control"
 				required
 		/>
@@ -80,17 +81,20 @@
 		<input
 				value="${ctsp.giaNhap}"
 				name="giaNhap"
-				type="text"
+				type="number"
+				step="0.01"
 				class="form-control"
 				required
 		/>
+
 	</div>
 	<div class="col-md-3">
 		<label class="form-label">Giá bán</label>
 		<input
 				value="${ctsp.giaBan}"
 				name="giaBan"
-				type="text"
+				type="number"
+				step="0.01"
 				class="form-control"
 				required
 		/>
@@ -117,7 +121,7 @@
 
 		<th scope="col">Sản phẩm</th>
 		<th scope="col">Dòng sản phẩm</th>
-		<th scope="col">Nhá sản xuất</th>
+		<th scope="col">Nhà sản xuất</th>
 		<th scope="col">Màu sắc</th>
 		<th scope="col">Năm bảo hành</th>
 		<th scope="col">Số lượng tồn</th>
