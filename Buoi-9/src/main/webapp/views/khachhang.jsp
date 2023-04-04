@@ -145,7 +145,7 @@
            Sửa
        </button>
    </div>
-    <table class="table">
+    <table class="table table-hover table-bordered">
         <thead>
         <tr>
             <th scope="col">Mã</th>
@@ -158,6 +158,7 @@
             <th scope="col">Thành phố</th>
             <th scope="col">Quốc gia</th>
             <th scope="col">Mật khẩu</th>
+            <th scope="col">Chức năng</th>
         </tr>
         </thead>
         <tbody>

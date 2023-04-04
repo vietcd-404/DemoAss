@@ -2,12 +2,10 @@ package com.example.Buoi_9.controller;
 
 
 import com.example.Buoi_9.entity.KhachHang;
-import com.example.Buoi_9.entity.NhanVien;
 import com.example.Buoi_9.repository.KhachHangRepository;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
-
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -52,7 +50,6 @@ public class KhachHangServlet extends HttpServlet {
             String ten = request.getParameter("ten");
             String tenDem = request.getParameter("tenDem");
             String ho = request.getParameter("ho");
-
             Date ngaySinh;
             try {
                 ngaySinh = dateFormat.parse(request.getParameter("ngaySinh"));
@@ -92,7 +89,7 @@ public class KhachHangServlet extends HttpServlet {
             } catch (ParseException e) {
                 throw new RuntimeException(e);
             }
-            String diaChi = request.getParameter("diaChi");
+            String diaChi =request.getParameter("diaChi");
             String sdt = request.getParameter("sdt");
             String matKhau = request.getParameter("matKhau");
             String thanhPho = request.getParameter("thanhPho");
