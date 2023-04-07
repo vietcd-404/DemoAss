@@ -17,27 +17,36 @@
 <table class="table">
 	<thead>
 	<tr>
-		<th scope="col">Id</th>
-		<th scope="col">Name</th>
-		<th scope="col">Email</th>
-		<th scope="col">Country</th>
+		<td>id</td>
+		<td>Ma</td>
+		<td>Ten</td>
+		<td>Gia Ban</td>
+		<td>Action</td>
 	</tr>
 	</thead>
 	<tbody>
-	<c:forEach var="u" items="${list}">
-		<tr>
-			<th scope="row">${u.id}</th>
-			<td>${u.ma}</td>
-			<td>${u.ngayThanhToan}</td>
-			<td>${u.tenNguoiNhan}</td>
-			<td>${u.diaChi}</td>
-			<td>${u.sdt}</td>
-			<td>${u.tinhTrang}</td>
+<%--	<c:forEach var="u" items="${list}">--%>
+<%--		<tr>--%>
+<%--			<th scope="row">${u.id}</th>--%>
+<%--			<td>${u.ma}</td>--%>
+<%--			<td>${u.ngayThanhToan}</td>--%>
+<%--			<td>${u.tenNguoiNhan}</td>--%>
+<%--			<td>${u.diaChi}</td>--%>
+<%--			<td>${u.sdt}</td>--%>
+<%--			<td>${u.tinhTrang}</td>--%>
+<%--   --%>
 
-
-		</tr>
-	</c:forEach>
-
+<%--		</tr>--%>
+<%--	</c:forEach>--%>
+<c:forEach var="items" items="${cart}">
+	<tr>
+		<td>${items.productId}</td>
+		<td>${items.productName}</td>
+		<td>${items.quantity}</td>
+		<td>${items.price}</td>
+		<td>${items.quantity *items.price}</td>
+	</tr>
+</c:forEach>
 	</tbody>
 </table>
 </body>

@@ -149,12 +149,14 @@
 			<td>
 					<%--					<a href="/nhan-vien/detail?id=${u.id}">Detail</a>--%>
 				<a class="btn btn-outline-secondary" href="/ctsp/delete?id=${u.id}">Xóa</a>
+				<a class="btn btn-outline-secondary" href="/ctsp/add-cart?product_id=${u.id}">Add to cart</a>
 			</td>
 		</tr>
 	</c:forEach>
 
 	</tbody>
 	</table>
+	<a class="btn btn-outline-secondary" href="/ctsp/cart">Giỏ hàng</a>
 </form>
 </body>
 

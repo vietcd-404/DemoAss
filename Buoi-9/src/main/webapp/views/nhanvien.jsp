@@ -223,6 +223,7 @@
 		<button formaction="/nhan-vien/add" type="submit" class="btn btn-outline-secondary">Thêm</button>
 		<button formaction="/nhan-vien/update?id=${nhanVien.id}" type="submit" class="btn btn-outline-secondary">Sửa
 		</button>
+		<p name="date">${date}</p>
 	</div>
 
 
@@ -273,7 +274,30 @@
 
 		</tbody>
 	</table>
+
+<%--   <p>${currentDay}/${currentMonth}/${currentYear}</p>--%>
+<%--	<p>${currentHour}:${currentMinute}:${currentSecond}</p>--%>
+	<p>The current date is: <span id="currentDay"></span>/<span id="currentMonth"></span>/<span id="currentYear"></span></p>
+	<p>The current time is: <span id="currentTime"></span></p>
 </form>
+<script>
+	function updateTime() {
+		var now = new Date();
+		var day = now.getDate();
+		var month = now.getMonth() + 1;
+		var year = now.getFullYear();
+		var hour = now.getHours();
+		var minute = now.getMinutes();
+		var second = now.getSeconds();
+		var timeString = hour + ":" + minute + ":" + second;
+		document.getElementById("currentDay").innerHTML = day;
+		document.getElementById("currentMonth").innerHTML = month;
+		document.getElementById("currentYear").innerHTML = year;
+		document.getElementById("currentTime").innerHTML = timeString;
+	}
+
+	setInterval(updateTime, 1000);
+</script>
 </body>
 
 </html>

@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "ChiTietSanPhamServlet", value = {"/ctsp/hien-thi","/ctsp/add","/ctsp/update","/ctsp/detail","/ctsp/delete"})
+@WebServlet(name = "ChiTietSanPhamServlet", value = {"/ctsp/hien-thi","/ctsp/add","/ctsp/update","/ctsp/detail","/ctsp/delete","/ctsp/add-cart","/ctsp/cart"})
 public class ChiTietSanPhamServlet extends HttpServlet {
     private ChiTietSanPhamRepository chiTietSanPhamRepository = new ChiTietSanPhamRepository();
     @Override
@@ -50,6 +50,47 @@ public class ChiTietSanPhamServlet extends HttpServlet {
             String id = request.getParameter("id");
             this.chiTietSanPhamRepository.delete(id);
             response.sendRedirect("/ctsp/hien-thi");
+        }else if (uri.contains("cart")) {
+            HttpSession session = request.getSession();
+            Cart cart = (Cart) session.getAttribute("cart");
+            request.setAttribute(  "cart", cart);
+            request.getRequestDispatcher("/views/giohang.jsp").forward(request, response);
+
+        }else if (uri.contains("add-cart")) {
+            String productId = request.getParameter("product_id");
+            ChiTietSanPham chiTietSanPham = chiTietSanPhamRepository.getById(productId);
+            // Tạo đối tượng CartItem
+            CartItem item = new CartItem();
+            item.setProductId(productId);
+            item.setProductName(chiTietSanPham.getSanPham().getTen());
+            item.setPrice(chiTietSanPham.getGiaBan());
+
+            // Lấy giỏ hàng từ session
+            HttpSession session = request.getSession();
+            Cart cart = (Cart) session.getAttribute("cart");
+
+            // Nếu giỏ hàng chưa được tạo, tạo mới nó
+            if (cart == null) {
+                cart = new Cart();
+                session.setAttribute("cart", cart);
+            }
+
+            // Thêm sản phẩm vào giỏ hàng
+            cart.addItem(item);
+
+            // Chuyển hướng người dùng đến trang giỏ hàng
+            List<ChiTietSanPham> list = this.chiTietSanPhamRepository.getAll();
+            ArrayList<SanPham> listsp = this.chiTietSanPhamRepository.getAllSanPham();
+            ArrayList<NSX> listnsx = this.chiTietSanPhamRepository.getAllNSX();
+            ArrayList<DongSP> listdongsp = this.chiTietSanPhamRepository.getAllDongSP();
+            ArrayList<MauSac> listdms = this.chiTietSanPhamRepository.getAllMauSac();
+            request.setAttribute("list",list);
+            request.setAttribute("listsp",listsp);
+            request.setAttribute("listnsx",listnsx);
+            request.setAttribute("listdongsp",listdongsp);
+            request.setAttribute("listdms",listdms);
+            System.out.println(uri);
+            request.getRequestDispatcher("/views/ctsp.jsp").forward(request,response);
         }
     }
 
